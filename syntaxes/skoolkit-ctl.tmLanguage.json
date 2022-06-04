@@ -1,0 +1,60 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "SkoolkitCtl",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#macros"
+		},
+		{
+			"match": "^([@bcgistuw])\\s+(.*)$",
+			"captures": {
+				"1": { "name": "keyword.control.skoolkit-ctl" },
+				"2": { "patterns": [ { "include": "#numbers" } ] }
+			}
+		},
+		{
+			"match": "^([DRNEBCSTW \\.])\\s+(.*)$",
+			"captures": {
+				"1": { "name": "keyword.other.skoolkit-ctl" },
+				"2": { "patterns": [ { "include": "#numbers" }, { "include": "#macros" } ] }
+			}
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.skoolkit-ctl",
+					"match": "^[;%#].*$"
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.integer.hexadecimal.skoolkit-ctl",
+					"match": "\\$[0-9a-fA-F]+\\b"
+				},
+				{
+					"name": "constant.numeric.integer.decimal.skoolkit-ctl",
+					"match": "\\b[0-9]+\\b"
+				}
+			]
+		},
+		"macros": {
+			"patterns": [
+				{
+					"name": "keyword.other.macro.skoolkit-ctl",
+					"match": "#[A-Z]+"
+				}
+			]
+		}
+	},
+	"scopeName": "source.ctl"
+}

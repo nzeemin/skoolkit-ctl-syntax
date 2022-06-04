@@ -1,0 +1,25 @@
+{
+    "name": "skoolkit-ctl-syntax",
+    "displayName": "skoolkit-ctl-syntax",
+    "description": "Skoolkit Control file syntax highlighting",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.67.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "skoolkit-ctl",
+            "aliases": ["SkoolkitCtl", "skoolkit-ctl"],
+            "extensions": [".ctl"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "skoolkit-ctl",
+            "scopeName": "source.ctl",
+            "path": "./syntaxes/skoolkit-ctl.tmLanguage.json"
+        }]
+    }
+}
